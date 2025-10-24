@@ -1,0 +1,112 @@
+/* Offwhite #f9e7d7 */
+body {
+   font-family: "arboria", sans-serif;
+}
+.user-logo {
+    text-align: center;
+}
+.logo {
+    width: 500px;
+
+}
+.welcome-sec {
+    padding: 50px;
+    text-align: center;
+}
+.about-sec {
+    text-align: center;
+    padding: 50px;
+}
+.about-content {
+
+
+}
+.portfolio-grid {
+    display: grid;
+    /* Adjust columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 50px;
+}
+
+.project-container {
+    /* Ensures the expanded content flows underneath the card */
+    grid-column: 1 / -1; 
+    /* Ensures the card takes one column spot */
+    display: contents; 
+}
+/* Ensure the card itself only takes one column */
+.project-card { 
+    grid-column: span 1;
+    cursor: pointer;
+    padding-left: 50px;
+    /* other styling */
+}
+/* --- 1. Hiding Case Study Data --- */
+/* Makes the source HTML blocks invisible but keeps them available for JavaScript to copy */
+.case-study-data {
+    display: none; 
+}
+
+/* --- 2. Global Modal Wrapper (Starts Hidden) --- */
+.modal-wrapper {
+    position: fixed; /* Fixed position ensures it overlays the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Must be high to ensure it's on top of all other content */
+    display: none; /* Initially hide the entire modal */
+    overflow-y: auto; /* Allow scrolling *inside* the modal if content is very long */
+    padding: 20px 0; /* Add vertical padding for breathing room */
+}
+
+/* --- 3. Modal Backdrop (The dark overlay) --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dark, semi-transparent overlay */
+}
+
+/* --- 4. Modal Content Box (The white container) --- */
+.modal-content-box {
+    background: white;
+    max-width: 900px; /* Set a max width for large case studies */
+    margin: 30px auto; /* Centers the box horizontally and adds top/bottom margin */
+    padding: 30px;
+    position: relative; /* Needed for positioning the close button */
+    z-index: 1001; 
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    /* Use a transform to make it pop out with a subtle animation */
+    transform: scale(0.95);
+    transition: transform 0.3s ease-out;
+}
+
+/* --- 5. Modal Close Button --- */
+#modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
+}
+
+/* --- 6. Active State (Toggled by JavaScript) --- */
+.modal-wrapper.is-visible {
+    display: block; /* Show the modal */
+}
+
+.modal-wrapper.is-visible .modal-content-box {
+    transform: scale(1); /* Smoothly scale to full size when visible */
+}
+/* media queries */
+@media only screen and (max-width: 600px){
+
+}
