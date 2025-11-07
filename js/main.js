@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. OPEN MODAL FUNCTIONALITY
     projectCards.forEach(card => {
-        // card.addEventListener('click', () => {
+        card.addEventListener('click', () => {
             // Get the unique ID of the case study content from the data attribute
             const contentId = card.getAttribute('data-project-id'); 
             const sourceContent = document.getElementById(contentId);
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Scroll the content area to the top (important if they open a second case study)
                 modal.scrollTop = 0;
             }
-        // });
+         });
     });
 
     // 2. CLOSE MODAL LISTENERS
