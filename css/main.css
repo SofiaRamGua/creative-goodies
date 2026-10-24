@@ -1,177 +1,418 @@
-
+/* Offwhite #f9e7d7 */
 body {
-   font-family: "arboria", sans-serif;
-   background-color: antiquewhite;
+   background-color: #ffffff;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   flex-direction: column;
+   
 }
-.user-logo {
-    text-align: center;
-}
-.logo {
-    width: 300px;
-
-}
-.welcome-sec {
-    text-align: center;
+header{
     padding: 30px;
+    background-color: rgb(255, 255, 255);   
 }
-
-.about-container {
-    display: grid;
-    gap: 1.5rem;
+.header-sec{
+    display: flex;
+    align-self: flex-start;
+    gap: 600px;
 }
-.education-card{
-    background-color: antiquewhite;
-    width: 300px;
-    height: 150px;
-    border-radius: 0.75rem; /* rounded-xl */
-    padding: 15px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.header-menu-item{
+    font-size: 20px;
+    color: rgb(65, 65, 65);
 }
-.skill-card {
-    width: 300px;
-    height: 150px;
-    border-radius: 0.75rem; /* rounded-xl */
-    padding: 15px;
-    background-color: antiquewhite;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-}
-.portfolio-grid {
-    max-width: 1280px; /* max-w-7xl */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 30px;
-    padding: 30px;
-}
-
-.project-container {
-    display: grid;
-    gap: 1.5rem; /* gap-6 */    
-}
-@media (min-width: 768px) { /* md:breakpoint */
-   .project-container {
-    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
-    gap: 2rem; /* md:gap-8 */
-    }
-}
-@media (min-width: 1024px) { /* md:breakpoint */
-   .project-container {
-    grid-template-columns: repeat(4, 1fr); /* md:grid-cols-2 */
-    gap: 2rem; /* md:gap-8 */
-    }
-}
-.project-card {
-    background-color: white;
-    padding: 1.5rem; /* p-6 */
-    border-radius: 0.75rem; /* rounded-xl */
-    border: 1px solid #e5e7eb; /* border border-gray-200 */
-
-    /* PRIMARY DROP SHADOW (shadow-xl equivalent) */
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-    /* TRANSITION for smooth hover effect */
-    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
-    will-change: transform, box-shadow; /* Optimization */
-    cursor: pointer;
-
-}
-        .project-card:hover {
-            /* HOVER LIFT (transform hover:-translate-y-1) */
-            transform: translateY(-0.25rem); 
-            
-            /* HOVER SHADOW (hover:shadow-2xl equivalent) */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        /* IMAGE STYLING */
-        .project-card img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: contain;
-            border-radius: 0.5rem; /* rounded-lg */
-            margin-bottom: 1rem; /* mb-4 */
-
-            /* Custom shadow for image to show inner depth (similar to card-image-shadow) */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-        }
-/* Ensure the card itself only takes one column */
-/* .project-card { 
-    width: 200px;
-    height: 100%;
-    cursor: pointer;
-    padding-left: 50px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    /* other styling }*/
-/* .project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.menu-contact-button{
+    width: 85px;
+    height: 30px;
+    border: 1px solid #e2e2ec;
+    border-radius: 30px;
+    background-color: #b3b1a8;
+    justify-content: center;
+    display: inline-flex;
     align-items: center;
-} */
-/* --- 1. Hiding Case Study Data --- */
-/* Makes the source HTML blocks invisible but keeps them available for JavaScript to copy */
-.case-study-data {
-    display: none; 
 }
-/* --- 2. Global Modal Wrapper (Starts Hidden) --- */
-.modal-wrapper {
-    position: fixed; /* Fixed position ensures it overlays the whole screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000; /* Must be high to ensure it's on top of all other content */
-    display: none; /* Initially hide the entire modal */
-    overflow-y: auto; /* Allow scrolling *inside* the modal if content is very long */
-    padding: 20px 0; /* Add vertical padding for breathing room */
+.menu-contact-button:hover {
+    background-color: #9090b9;
 }
-
-/* --- 3. Modal Backdrop (The dark overlay) --- */
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Dark, semi-transparent overlay */
+ul{
+    display: flex; 
+    gap: 40px;
+}
+a{
+    color: rgb(167, 158, 158);   
+}
+li{
+    list-style: none; 
+}
+a {
+    text-decoration: none;
+}
+a:hover:not(.no-style){   
+    text-decoration: underline 3px #2f2f30;
 }
 
-/* --- 4. Modal Content Box (The white container) --- */
-.modal-content-box {
-    background: white;
-    max-width: 900px; /* Set a max width for large case studies */
-    margin: 30px auto; /* Centers the box horizontally and adds top/bottom margin */
-    padding: 30px;
-    position: relative; /* Needed for positioning the close button */
-    z-index: 1001; 
-    border-radius: 6px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-    /* Use a transform to make it pop out with a subtle animation */
-    transform: scale(0.95);
-    transition: transform 0.3s ease-out;
+.nav-select{
+    text-decoration: underline 3px #2f2f30;
 }
-/* --- 5. Modal Close Button --- */
-#modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
+.user-logo-center img{ 
+    width: 150px;
+}
+
+.welcome-sec{
+    align-content: center;
+    padding: 100px; 
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin: 50px;
+}
+.welcome-text{
+    text-align: center;
+    margin: auto;
+}
+span{
+    font-size: 40px;
+}
+.primary-button{
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    color: white;
+    background-color: #4848f3;
     border: none;
+    text-align: center; 
+}
+.primary-button:hover{
+    background-color: rgb(65, 65, 65);
+}
+.welcome-sec-button a{
+    text-decoration: none;
+}
+.welcome-sec-button{
+    text-align: center;
+    margin: 40px;
+}
+.section-two-photo{
+    width: 300px;
+    height: auto;
+}
+.section-two-text{
+    flex: 1;
+}
+.section-two-container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 800px;
+    padding-bottom: 60px;
+}
+.section-three{
+    background-color: #d5d5dd;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-container img {
+    order: 1;
+    width: 70px;
+    margin-bottom: 0.5rem;
+}
+
+.skills-container {
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 250px;
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #414141;
+    .skills-text {
+        order: 2;
+    }
+}
+
+.sec-three-button{
+    text-align: center;
+    margin: 40px;
+}
+.home-project-container{
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+    padding-top:30px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+        img{
+            width: 300px;
+        }
+
+}
+.section-five{
+    background-color: #d5d5dd;
+    width: 100%;
+        h1{
+            margin: 0 auto;
+            padding-top:50px;
+        }
+
+}
+.section-four{
+        h1{
+            margin: 0 auto;
+            padding-top:50px;
+        }
+
+}
+.contact-button{
+    margin:40px;
+    width: 150px;
+    height: 50px;
+    border: 3px solid #646466;
+    border-radius: 30px;
+    color: #5e5e63;
+    background-color: #686761;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+        h3 {
+            color: aliceblue;
+            margin: 0 auto;
+
+
+        }
+
+}
+.secondary-button:hover{
+    background-color: hsl(240, 15%, 91%);
+    color: #f4f1e1;
+}
+.secondary-button{
+    width: 150px;
+    height: 50px;
+    border: 3px solid #4848f3;
+    border-radius: 30px;
+    color: #4848f3;
+    background-color: #f4f1e1;
+    text-align: center;
+}
+p {
+  font-family: "Karma", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h2{
     font-size: 30px;
-    cursor: pointer;
-    color: #333;
-    line-height: 1;
+    font-weight: lighter;
+    color: rgb(65, 65, 65);
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(65, 65, 65);
+      font-family: "Biryani", sans-serif;
+  font-weight: 600;
+  font-style: normal
+}
+h3, h4 {
+    color: #414141;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 15px;
+}
+.work-row1 img{
+    width: 100%;
+    border-radius: 20px;   
+}
+.work-row-container{
+    padding: 50px;
+}
+.work-row1{
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
+}
+.work-bottom-text h2{
+    font-size: 25px;
+    padding: 0;
+}
+.work-title-sub{
+    font-family: arboria, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+.contact-container{
+    text-align: center;
+}
+.contact-container a{
+    font-size: 20px;
+}
+strong{
+    color: #4848f3;
+}
+.socials-wrap{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 300px;
+}
+.contact-sec1 p{
+    font-size: 20px;
+}
+.contact-sec1{
+    text-align: center;
+    padding: 100px;
+    padding-bottom: 200px;
+}
+p{
+    color: rgb(65, 65, 65);
+}
+.about-contact{
+    color: #4848f3;
+}
+footer{
+    background-color: #414141;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+footer p{
+    color: #f4f1e1;    
+}
+.footer-social a{
+    text-decoration: none;
+}
+.footer-link:hover{
+    text-decoration: underline 2px #4848f3;
+}
+footer .footer-link{
+    color: #f4f1e1;
+    text-decoration: underline 2px #f4f1e1;
+
+}
+.footer-wrap{
+    padding: 30px;
+}
+.footer-credits{
+    text-align: right;
+
 }
 
-/* --- 6. Active State (Toggled by JavaScript) --- */
-.modal-wrapper.is-visible {
-    display: block; /* Show the modal */
-}
-
-.modal-wrapper.is-visible .modal-content-box {
-    transform: scale(1); /* Smoothly scale to full size when visible */
-}
 /* media queries */
-/* @media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 30px;
 
-} */
+    }
+    .primary-button{
+        width: 150px;
+        height: 50px;
+        border-radius: 30px;
+        color: rgb(255, 255, 255);
+        background-color: #4848f3;
+        border: none;
+        text-align: center;
+        font-size: 16px;
+    }
+    .welcome-sec{
+        align-content: center;
+        padding: 30px; 
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        margin: 30px;
+    }
+    .section-two-photo-container{
+        text-align: center; 
+        padding: 50px;
+        display: grid;
+        grid-gap: 1rem;
+    }
+    .section-two-img{
+        width: 100%;
+        border-radius: 10px;  
+    }
+    .work-row1{
+        display: grid;
+    }
+    .contact-sec1{
+        padding: 30px;
+        font-size: 20px;
+    }
+    .user-logo-center img{ 
+        width: 50%;
+    }
+    header{
+        padding: 0px;
+    }
+    .menu-nav-web{
+        display: none;
+    }
+    #hamitems a {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      font-size: 40px;
+      color: rgb(65, 65, 65);
+
+    }
+    #hamitems{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #ffffffd8;
+
+    }
+    #hamnav label { 
+      display: flex; 
+      justify-content: end;
+      color: #4848f3;
+      font-size: 50px;
+      padding: 10px;
+    }
+    #hamburger{
+        display: none;
+    }
+    #hamitems { 
+        display: none; 
+    }
+    #hamnav input:checked ~ #hamitems { 
+        display: block;
+    }
+  }
+@media screen and (min-width: 600px){
+    #hamnav{
+        display: none;
+    }
+}
